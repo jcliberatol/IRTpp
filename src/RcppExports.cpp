@@ -5,6 +5,27 @@
 
 using namespace Rcpp;
 
+// IRTpp
+List IRTpp(SEXP data, SEXP model, SEXP dim, SEXP initVal, SEXP epsilonConv, SEXP maxIter, SEXP verbose);
+RcppExport SEXP IRTpp_IRTpp(SEXP dataSEXP, SEXP modelSEXP, SEXP dimSEXP, SEXP initValSEXP, SEXP epsilonConvSEXP, SEXP maxIterSEXP, SEXP verboseSEXP) {
+BEGIN_RCPP
+    SEXP __sexp_result;
+    {
+        Rcpp::RNGScope __rngScope;
+        Rcpp::traits::input_parameter< SEXP >::type data(dataSEXP );
+        Rcpp::traits::input_parameter< SEXP >::type model(modelSEXP );
+        Rcpp::traits::input_parameter< SEXP >::type dim(dimSEXP );
+        Rcpp::traits::input_parameter< SEXP >::type initVal(initValSEXP );
+        Rcpp::traits::input_parameter< SEXP >::type epsilonConv(epsilonConvSEXP );
+        Rcpp::traits::input_parameter< SEXP >::type maxIter(maxIterSEXP );
+        Rcpp::traits::input_parameter< SEXP >::type verbose(verboseSEXP );
+        List __result = IRTpp(data, model, dim, initVal, epsilonConv, maxIter, verbose);
+        PROTECT(__sexp_result = Rcpp::wrap(__result));
+    }
+    UNPROTECT(1);
+    return __sexp_result;
+END_RCPP
+}
 // rcpp_hello_world
 List rcpp_hello_world();
 RcppExport SEXP IRTpp_rcpp_hello_world() {
